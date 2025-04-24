@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 import java.io.FileInputStream;
-import java.sql.SQLOutput;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class BedtimeStories {
@@ -14,13 +14,6 @@ public class BedtimeStories {
         try {
             System.out.println("Which Bedtime Story would you like to read? ");
             displayStories();;
-            int userChoice = UserInput.nextInt();
-
-            switch(userChoice)
-            case 1:
-
-
-
             String choiceStory = UserInput.nextLine();
 
 
@@ -28,9 +21,10 @@ public class BedtimeStories {
             Scanner fileScanner1 = new Scanner(fis1);
 
             int lineNum = 1;
+
             while (fileScanner1.hasNextLine()) {
                 //print out each line of the file
-                System.out.println(lineNum + ": " + fileScanner1.hasNextLine());
+                System.out.println(lineNum + ": " + fileScanner1.nextLine());
                 lineNum++;
 
             }
@@ -42,6 +36,6 @@ public class BedtimeStories {
     }
 
     static void displayStories(){
-        System.out.println("1. Goldilocks\n2. Hansel & Gretel\n3. Mary had a little lamb");
+        System.out.println("1. Goldilocks | goldilocks.txt \n2. Hansel & Gretel | hansel_and_gretel.txt \n3. Mary had a little lamb | Mary_had_a_little_lamb.txt");
     }
 }
